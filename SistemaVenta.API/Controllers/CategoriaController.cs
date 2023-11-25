@@ -8,6 +8,7 @@ using SistemaVenta.API.Utilidad;
 
 namespace SistemaVenta.API.Controllers
 {
+    //api controlador de categoria
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase
