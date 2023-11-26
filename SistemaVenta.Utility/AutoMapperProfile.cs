@@ -19,6 +19,10 @@ namespace SistemaVenta.Utility
             CreateMap<Rol,RolDTO>().ReverseMap();
             #endregion  Rol
 
+            #region Cliente
+            CreateMap<Cliente, ClienteDTO>().ReverseMap();
+            #endregion
+
             #region Menu
             CreateMap<Menu, MenuDTO>().ReverseMap();
             #endregion  Menu
@@ -87,6 +91,15 @@ namespace SistemaVenta.Utility
                );
 
             #endregion  Producto
+
+
+            #region Proveedor
+            CreateMap<Proveedore, ProveedorDTO>()
+                .ForMember(destino =>
+                          destino.FechaRegistro,
+                          opt => opt.MapFrom(origen => origen.FechaRegistro.Value.ToString("dd/MM/yyyy"))
+                        );
+            #endregion
 
             #region Venta
             CreateMap<Venta, VentaDTO>()
