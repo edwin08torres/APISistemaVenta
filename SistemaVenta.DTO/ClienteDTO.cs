@@ -19,5 +19,7 @@ namespace SistemaVenta.DTO
         public string? Telefono { get; set; }
 
         public string? Correo { get; set; }
+
+        public int? EsActivo { get; set; }
     }
 }

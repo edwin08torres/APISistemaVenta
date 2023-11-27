@@ -34,5 +34,84 @@ namespace SistemaVenta.BLL.Servicios
                 throw;
             }
         }
+
+        public async Task<ClienteDTO> Crear(ClienteDTO modelo)
+        {
+            try
+            {
+                var clientecreacion = await _clienteRepositorio.Crear(_mapper.Map<Cliente>(modelo));
+
+                if (clientecreacion.Idcliente == 0)
+                    throw new TaskCanceledException("No se pudo crear");
+
+                return _mapper.Map<ClienteDTO>(clientecreacion);
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> Editar(ClienteDTO modelo)
+        {
+            try
+            {
+
+                var clientemodelo = _mapper.Map<Cliente>(modelo);
+                var clienteEncontrado = await _clienteRepositorio.Obtener(u =>
+                    u.Idcliente == clientemodelo.Idcliente
+                );
+
+                if (clienteEncontrado == null)
+                    throw new TaskCanceledException("El cliente no existe");
+
+
+                clienteEncontrado.Telefono = clientemodelo.Telefono;
+                clienteEncontrado.Correo = clientemodelo.Correo;
+                clienteEncontrado.Direccion = clientemodelo.Direccion;
+                clienteEncontrado.Activo = clientemodelo.Activo;
+
+                bool respuesta = await _clienteRepositorio.Editar(clienteEncontrado);
+
+                if (!respuesta)
+                    throw new TaskCanceledException("No se pudo editar"); ;
+
+
+                return respuesta;
+
+
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> Eliminar(int id)
+        {
+            try
+            {
+
+                var clienteEncontrado = await _clienteRepositorio.Obtener(p => p.Idcliente == id);
+
+                if (clienteEncontrado == null)
+                    throw new TaskCanceledException("El cliente no existe");
+
+                bool respuesta = await _clienteRepositorio.Eliminar(clienteEncontrado);
+
+
+                if (!respuesta)
+                    throw new TaskCanceledException("No se pudo elminar"); ;
+
+                return respuesta;
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

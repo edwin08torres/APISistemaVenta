@@ -40,7 +40,7 @@ public partial class DbventaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("data source=DESKTOP-L59E58V;Database=MiTienda;USER ID=sa; Password=12345; Persist Security Info=true; TrustServerCertificate=true;MultipleActiveResultSets=true");
+        => optionsBuilder.UseSqlServer("data source=DESKTOP-L59E58V;Database=MiTienda;USER ID=sa; Password=12345; Persist Security Info=true; TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -69,6 +69,9 @@ public partial class DbventaContext : DbContext
             entity.ToTable("Cliente");
 
             entity.Property(e => e.Idcliente).HasColumnName("IDCliente");
+            entity.Property(e => e.Activo)
+                .IsRequired()
+                .HasDefaultValueSql("((1))");
             entity.Property(e => e.Cedula)
                 .HasMaxLength(20)
                 .IsUnicode(false);
@@ -95,6 +98,9 @@ public partial class DbventaContext : DbContext
             entity.Property(e => e.Cantidad).HasColumnName("cantidad");
             entity.Property(e => e.IdProducto).HasColumnName("idProducto");
             entity.Property(e => e.IdVenta).HasColumnName("idVenta");
+            entity.Property(e => e.Idcliente)
+                .HasDefaultValueSql("((2))")
+                .HasColumnName("IDCliente");
             entity.Property(e => e.Precio)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("precio");
@@ -109,6 +115,11 @@ public partial class DbventaContext : DbContext
             entity.HasOne(d => d.IdVentaNavigation).WithMany(p => p.DetalleVenta)
                 .HasForeignKey(d => d.IdVenta)
                 .HasConstraintName("FK__DetalleVe__idVen__403A8C7D");
+
+            entity.HasOne(d => d.IdclienteNavigation).WithMany(p => p.DetalleVenta)
+                .HasForeignKey(d => d.Idcliente)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_IDCliente");
         });
 
         modelBuilder.Entity<Menu>(entity =>
@@ -200,6 +211,9 @@ public partial class DbventaContext : DbContext
             entity.HasKey(e => e.Idproveedor).HasName("PK__Proveedo__4CD732405364F2CB");
 
             entity.Property(e => e.Idproveedor).HasColumnName("IDProveedor");
+            entity.Property(e => e.Activo)
+                .IsRequired()
+                .HasDefaultValueSql("((1))");
             entity.Property(e => e.Direccion)
                 .HasMaxLength(200)
                 .IsUnicode(false);
@@ -291,4 +305,3 @@ public partial class DbventaContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
-

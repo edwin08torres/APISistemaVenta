@@ -17,5 +17,7 @@ namespace SistemaVenta.DTO
         public string? Direccion { get; set; }
 
         public string? FechaRegistro { get; set; }
+
+        public int? EsActivo { get; set; }
     }
 }

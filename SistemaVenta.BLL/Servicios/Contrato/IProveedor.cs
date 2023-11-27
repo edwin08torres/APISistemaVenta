@@ -10,5 +10,8 @@ namespace SistemaVenta.BLL.Servicios.Contrato
     public interface IProveedor
     {
         Task<List<ProveedorDTO>> listar();
+        Task<ProveedorDTO> Crear(ProveedorDTO modelo);
+        Task<bool> Editar(ProveedorDTO modelo);
+        Task<bool> Eliminar(int id);
     }
 }

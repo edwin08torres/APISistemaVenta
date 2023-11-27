@@ -57,9 +57,24 @@ namespace SistemaVenta.Utility
 
             #endregion  Usuario
 
+            #region Cliente
+            CreateMap<Cliente,ClienteDTO>()
+                 .ForMember(destino =>
+                    destino.EsActivo,
+                    opt => opt.MapFrom(origen => origen.Activo == true ? 1 : 0)
+                );
+
+           CreateMap<ClienteDTO,Cliente>()
+                .ForMember(destino =>
+                    destino.Activo,
+                    opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
+                );
+
+            #endregion
+
             #region Categoria
             CreateMap<Categoria, CategoriaDTO>().ReverseMap();
-            #endregion  Categoria
+            #endregion  Categoria   
 
             #region Producto
             CreateMap<Producto, ProductoDTO>()
@@ -92,13 +107,21 @@ namespace SistemaVenta.Utility
 
             #endregion  Producto
 
-
             #region Proveedor
             CreateMap<Proveedore, ProveedorDTO>()
                 .ForMember(destino =>
                           destino.FechaRegistro,
                           opt => opt.MapFrom(origen => origen.FechaRegistro.Value.ToString("dd/MM/yyyy"))
-                        );
+                        )
+                 .ForMember(destino =>
+                    destino.EsActivo,
+                    opt => opt.MapFrom(origen => origen.Activo == true ? 1 : 0)
+                );
+            CreateMap<ProveedorDTO, Proveedore>()
+                .ForMember(destino =>
+                   destino.Activo,
+                   opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
+               );
             #endregion
 
             #region Venta

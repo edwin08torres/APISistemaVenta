@@ -17,7 +17,11 @@ public partial class DetalleVenta
 
     public decimal? Total { get; set; }
 
+    public int Idcliente { get; set; }
+
     public virtual Producto? IdProductoNavigation { get; set; }
 
     public virtual Venta? IdVentaNavigation { get; set; }
+
+    public virtual Cliente IdclienteNavigation { get; set; } = null!;
 }

@@ -18,4 +18,8 @@ public partial class Cliente
     public string? Correo { get; set; }
 
     public DateTime? FechaRegistro { get; set; }
+
+    public bool? Activo { get; set; }
+
+    public virtual ICollection<DetalleVenta> DetalleVenta { get; } = new List<DetalleVenta>();
 }
