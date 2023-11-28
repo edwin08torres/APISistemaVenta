@@ -70,7 +70,7 @@ namespace SistemaVenta.BLL.Servicios
                 if (proveedorEncontrado == null)
                     throw new TaskCanceledException("El proveedor no existe");
 
-
+                proveedorEncontrado.NombreProveedor = proveedorModelo.NombreProveedor;
                 proveedorEncontrado.Telefono = proveedorModelo.Telefono;
                 proveedorEncontrado.Direccion = proveedorModelo.Direccion;
                 proveedorEncontrado.Activo = proveedorModelo.Activo;

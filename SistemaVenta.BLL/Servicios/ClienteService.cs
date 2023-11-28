@@ -67,6 +67,7 @@ namespace SistemaVenta.BLL.Servicios
                     throw new TaskCanceledException("El cliente no existe");
 
 
+                clienteEncontrado.NombreCliente = clientemodelo.NombreCliente;
                 clienteEncontrado.Telefono = clientemodelo.Telefono;
                 clienteEncontrado.Correo = clientemodelo.Correo;
                 clienteEncontrado.Direccion = clientemodelo.Direccion;
