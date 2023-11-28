@@ -76,6 +76,7 @@ namespace SistemaVenta.BLL.Servicios
 
                 productoEncontrado.Nombre = productoModelo.Nombre;
                 productoEncontrado.IdCategoria = productoModelo.IdCategoria;
+                productoEncontrado.Idproveedor = productoModelo.Idproveedor;
                 productoEncontrado.Stock = productoModelo.Stock;
                 productoEncontrado.Precio = productoModelo.Precio;
                 productoEncontrado.EsActivo = productoModelo.EsActivo;
