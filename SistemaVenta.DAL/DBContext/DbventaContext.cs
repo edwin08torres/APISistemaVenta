@@ -204,6 +204,10 @@ public partial class DbventaContext : DbContext
             entity.HasOne(d => d.IdCategoriaNavigation).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdCategoria)
                 .HasConstraintName("FK__Producto__idCate__35BCFE0A");
+
+            entity.HasOne(d => d.IdproveedorNavigation).WithMany(p => p.Productos)
+                .HasForeignKey(d => d.Idproveedor)
+                .HasConstraintName("FK_Producto_Proveedor");
         });
 
         modelBuilder.Entity<Proveedore>(entity =>

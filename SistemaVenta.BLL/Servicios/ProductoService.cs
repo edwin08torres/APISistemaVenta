@@ -32,7 +32,9 @@ namespace SistemaVenta.BLL.Servicios
 
                 var queryProducto = await _productoRepositorio.Consultar();
 
-                var listaProductos = queryProducto.Include(cat => cat.IdCategoriaNavigation).ToList();
+                var listaProductos = queryProducto.Include(cat => cat.IdCategoriaNavigation)
+                                                  .Include(pro => pro.IdproveedorNavigation)
+                                                  .ToList();
 
                 return _mapper.Map<List<ProductoDTO>>(listaProductos.ToList());
 

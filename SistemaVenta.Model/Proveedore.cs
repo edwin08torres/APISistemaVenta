@@ -13,8 +13,9 @@ public partial class Proveedore
 
     public string? Direccion { get; set; }
 
-    public bool? Activo { get; set; }
-
     public DateTime? FechaRegistro { get; set; }
 
+    public bool? Activo { get; set; }
+
+    public virtual ICollection<Producto> Productos { get; } = new List<Producto>();
 }

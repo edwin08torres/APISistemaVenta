@@ -15,6 +15,7 @@ namespace SistemaVenta.DTO
         public int? Stock { get; set; }
         public string? Precio { get; set; }
         public int? Idproveedor { get; set; }
+        public string? nombreProveedor { get; set; }
         public int? EsActivo { get; set; }
     }
 }

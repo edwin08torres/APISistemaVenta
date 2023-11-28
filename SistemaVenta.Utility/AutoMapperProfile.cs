@@ -83,6 +83,10 @@ namespace SistemaVenta.Utility
                     opt => opt.MapFrom(origen => origen.IdCategoriaNavigation.Nombre)
                 )
                 .ForMember(destino =>
+                    destino.nombreProveedor,
+                    opt => opt.MapFrom(origen => origen.IdproveedorNavigation.NombreProveedor)
+                )
+                .ForMember(destino =>
                     destino.Precio,
                     opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("es-PE")))
                 )
@@ -97,6 +101,10 @@ namespace SistemaVenta.Utility
                    opt => opt.Ignore()
                )
                .ForMember(destino =>
+                   destino.IdproveedorNavigation,
+                   opt => opt.Ignore()
+               )
+               .ForMember(destino =>
                    destino.Precio,
                    opt => opt.MapFrom(origen => Convert.ToDecimal(origen.Precio, new CultureInfo("es-PE")))
                )
@@ -104,7 +112,7 @@ namespace SistemaVenta.Utility
                    destino.EsActivo,
                    opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
                );
-
+      
             #endregion  Producto
 
             #region Proveedor
