@@ -65,12 +65,16 @@ namespace SistemaVenta.BLL.Servicios
                         v.FechaRegistro.Value.Date <= fech_Fin.Date
                     ).Include(dv => dv.DetalleVenta)
                     .ThenInclude(p => p.IdProductoNavigation)
+                    .Include(dv => dv.DetalleVenta)
+                    .ThenInclude(c => c.IdclienteNavigation)
                     .ToListAsync();
                 }
                 else {
                     ListaResultado = await query.Where(v => v.NumeroDocumento == numeroVenta
                       ).Include(dv => dv.DetalleVenta)
                       .ThenInclude(p => p.IdProductoNavigation)
+                      .Include(dv => dv.DetalleVenta)
+                      .ThenInclude(c => c.IdclienteNavigation)
                       .ToListAsync();
 
                 }
@@ -97,6 +101,7 @@ namespace SistemaVenta.BLL.Servicios
                 ListaResultado = await query
                     .Include(p => p.IdProductoNavigation)
                     .Include(v => v.IdVentaNavigation)
+                    .Include(c => c.IdclienteNavigation)
                     .Where(dv => 
                         dv.IdVentaNavigation.FechaRegistro.Value.Date >= fech_Inicio.Date &&
                         dv.IdVentaNavigation.FechaRegistro.Value.Date <= fech_Fin.Date

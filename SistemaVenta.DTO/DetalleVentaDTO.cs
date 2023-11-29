@@ -9,6 +9,7 @@ namespace SistemaVenta.DTO
     public class DetalleVentaDTO
     {
         public int? IdProducto { get; set; }
+
         public string? DescripcionProducto { get; set; }
 
         public int? Cantidad { get; set; }
@@ -16,5 +17,11 @@ namespace SistemaVenta.DTO
         public string? PrecioTexto { get; set; }
 
         public string? TotalTexto { get; set; }
+
+        public int? IdCliente { get; set; }
+
+        public string? Cedula { get; set; }
+
+        public string? NombreCliente { get; set; }
     }
 }

@@ -156,6 +156,14 @@ namespace SistemaVenta.Utility
                     destino.DescripcionProducto,
                     opt => opt.MapFrom(origen => origen.IdProductoNavigation.Nombre)
                 )
+                  .ForMember(destino =>
+                    destino.Cedula,
+                    opt => opt.MapFrom(origen => origen.IdclienteNavigation.Cedula)
+                )
+                .ForMember(destino =>
+                    destino.NombreCliente,
+                    opt => opt.MapFrom(origen => origen.IdclienteNavigation.NombreCliente)
+                )
                 .ForMember(destino =>
                     destino.PrecioTexto,
                     opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("es-PE")))
