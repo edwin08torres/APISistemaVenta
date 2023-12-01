@@ -19,6 +19,10 @@ namespace SistemaVenta.Utility
             CreateMap<Rol,RolDTO>().ReverseMap();
             #endregion  Rol
 
+            #region Cliente
+            CreateMap<Cliente, ClienteDTO>().ReverseMap();
+            #endregion
+
             #region Menu
             CreateMap<Menu, MenuDTO>().ReverseMap();
             #endregion  Menu
@@ -53,15 +57,34 @@ namespace SistemaVenta.Utility
 
             #endregion  Usuario
 
+            #region Cliente
+            CreateMap<Cliente,ClienteDTO>()
+                 .ForMember(destino =>
+                    destino.EsActivo,
+                    opt => opt.MapFrom(origen => origen.Activo == true ? 1 : 0)
+                );
+
+           CreateMap<ClienteDTO,Cliente>()
+                .ForMember(destino =>
+                    destino.Activo,
+                    opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
+                );
+
+            #endregion
+
             #region Categoria
             CreateMap<Categoria, CategoriaDTO>().ReverseMap();
-            #endregion  Categoria
+            #endregion  Categoria   
 
             #region Producto
             CreateMap<Producto, ProductoDTO>()
                 .ForMember(destino =>
                     destino.DescripcionCategoria,
                     opt => opt.MapFrom(origen => origen.IdCategoriaNavigation.Nombre)
+                )
+                .ForMember(destino =>
+                    destino.nombreProveedor,
+                    opt => opt.MapFrom(origen => origen.IdproveedorNavigation.NombreProveedor)
                 )
                 .ForMember(destino =>
                     destino.Precio,
@@ -78,6 +101,10 @@ namespace SistemaVenta.Utility
                    opt => opt.Ignore()
                )
                .ForMember(destino =>
+                   destino.IdproveedorNavigation,
+                   opt => opt.Ignore()
+               )
+               .ForMember(destino =>
                    destino.Precio,
                    opt => opt.MapFrom(origen => Convert.ToDecimal(origen.Precio, new CultureInfo("es-PE")))
                )
@@ -85,8 +112,25 @@ namespace SistemaVenta.Utility
                    destino.EsActivo,
                    opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
                );
-
+      
             #endregion  Producto
+
+            #region Proveedor
+            CreateMap<Proveedore, ProveedorDTO>()
+                .ForMember(destino =>
+                          destino.FechaRegistro,
+                          opt => opt.MapFrom(origen => origen.FechaRegistro.Value.ToString("dd/MM/yyyy"))
+                        )
+                 .ForMember(destino =>
+                    destino.EsActivo,
+                    opt => opt.MapFrom(origen => origen.Activo == true ? 1 : 0)
+                );
+            CreateMap<ProveedorDTO, Proveedore>()
+                .ForMember(destino =>
+                   destino.Activo,
+                   opt => opt.MapFrom(origen => origen.EsActivo == 1 ? true : false)
+               );
+            #endregion
 
             #region Venta
             CreateMap<Venta, VentaDTO>()
@@ -111,6 +155,14 @@ namespace SistemaVenta.Utility
                 .ForMember(destino =>
                     destino.DescripcionProducto,
                     opt => opt.MapFrom(origen => origen.IdProductoNavigation.Nombre)
+                )
+                  .ForMember(destino =>
+                    destino.Cedula,
+                    opt => opt.MapFrom(origen => origen.IdclienteNavigation.Cedula)
+                )
+                .ForMember(destino =>
+                    destino.NombreCliente,
+                    opt => opt.MapFrom(origen => origen.IdclienteNavigation.NombreCliente)
                 )
                 .ForMember(destino =>
                     destino.PrecioTexto,

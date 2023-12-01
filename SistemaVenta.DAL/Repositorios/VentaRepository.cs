@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Repositorios.Contrato;
+using SistemaVenta.DTO;
 using SistemaVenta.Model;
 
 namespace SistemaVenta.DAL.Repositorios
@@ -34,9 +35,27 @@ namespace SistemaVenta.DAL.Repositorios
 
                         producto_encontrado.Stock = producto_encontrado.Stock - dv.Cantidad;
                         _dbcontext.Productos.Update(producto_encontrado);
+
+                        Cliente clienteAsociado = _dbcontext.Clientes.FirstOrDefault(c => c.Idcliente == dv.Idcliente);
+
+                        if (clienteAsociado != null)
+                        {
+                            DetalleVentaDTO detalleVentaDTO = new DetalleVentaDTO()
+                            {
+                                IdProducto = dv.IdProducto,
+                                DescripcionProducto = dv.IdProductoNavigation?.Nombre, 
+                                Cantidad = dv.Cantidad,
+                                PrecioTexto = dv.Precio?.ToString(), 
+                                TotalTexto = dv.Total?.ToString(), 
+                                IdCliente = clienteAsociado.Idcliente,
+                                Cedula = clienteAsociado.Cedula,
+                                NombreCliente = clienteAsociado.NombreCliente
+                            };         
+                        }
+
                     }
                     await _dbcontext.SaveChangesAsync();
-
+                
                     NumeroDocumento correlativo = _dbcontext.NumeroDocumentos.First();
 
                     correlativo.UltimoNumero = correlativo.UltimoNumero + 1;
@@ -69,9 +88,6 @@ namespace SistemaVenta.DAL.Repositorios
                 return ventaGenerada;
             
             }
-
-
-
         }
     }
 }

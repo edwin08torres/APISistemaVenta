@@ -32,7 +32,9 @@ namespace SistemaVenta.BLL.Servicios
 
                 var queryProducto = await _productoRepositorio.Consultar();
 
-                var listaProductos = queryProducto.Include(cat => cat.IdCategoriaNavigation).ToList();
+                var listaProductos = queryProducto.Include(cat => cat.IdCategoriaNavigation)
+                                                  .Include(pro => pro.IdproveedorNavigation)
+                                                  .ToList();
 
                 return _mapper.Map<List<ProductoDTO>>(listaProductos.ToList());
 
@@ -74,6 +76,7 @@ namespace SistemaVenta.BLL.Servicios
 
                 productoEncontrado.Nombre = productoModelo.Nombre;
                 productoEncontrado.IdCategoria = productoModelo.IdCategoria;
+                productoEncontrado.Idproveedor = productoModelo.Idproveedor;
                 productoEncontrado.Stock = productoModelo.Stock;
                 productoEncontrado.Precio = productoModelo.Precio;
                 productoEncontrado.EsActivo = productoModelo.EsActivo;
