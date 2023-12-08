@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DTO;
-using SistemaVenta.Model;
+using SistemaVenta.MODEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +63,7 @@ namespace SistemaVenta.BLL.Servicios
             {
 
                 var proveedorModelo = _mapper.Map<Proveedore>(modelo);
-                var proveedorEncontrado = await _proveedorRepositorio.Obtener(u =>
+                var proveedorEncontrado = await _proveedorRepositorio.obtener(u =>
                     u.Idproveedor == proveedorModelo.Idproveedor
                 );
 
@@ -97,12 +97,12 @@ namespace SistemaVenta.BLL.Servicios
             try
             {
 
-                var proveedorEncontrado = await _proveedorRepositorio.Obtener(p => p.Idproveedor == id);
+                var proveedorEncontrado = await _proveedorRepositorio.obtener(p => p.Idproveedor == id);
 
                 if (proveedorEncontrado == null)
                     throw new TaskCanceledException("El proveedor no existe");
 
-                bool respuesta = await _proveedorRepositorio.Eliminar(proveedorEncontrado);
+                bool respuesta = await _proveedorRepositorio.Delete(proveedorEncontrado);
 
 
                 if (!respuesta)
