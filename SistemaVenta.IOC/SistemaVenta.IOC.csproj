@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SistemaVenta.BLL\SistemaVenta.BLL.csproj" />
     <ProjectReference Include="..\SistemaVenta.DAL\SistemaVenta.DAL.csproj" />
-    <ProjectReference Include="..\SistemaVenta.Utility\SistemaVenta.Utility.csproj" />
+    <ProjectReference Include="..\SistemaVenta.UTILITY\SistemaVenta.UTILITY.csproj" />
   </ItemGroup>
 
 </Project>

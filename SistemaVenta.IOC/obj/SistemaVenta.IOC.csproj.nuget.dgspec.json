@@ -119,8 +119,8 @@
               "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj": {
                 "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj"
               },
-              "C:\\project\\APISistemaVenta\\SistemaVenta.Model\\SistemaVenta.Model.csproj": {
-                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.Model\\SistemaVenta.Model.csproj"
+              "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj": {
+                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj"
               }
             }
           }
@@ -259,8 +259,8 @@
               "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
                 "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
               },
-              "C:\\project\\APISistemaVenta\\SistemaVenta.Utility\\SistemaVenta.Utility.csproj": {
-                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.Utility\\SistemaVenta.Utility.csproj"
+              "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj": {
+                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj"
               }
             }
           }
@@ -408,8 +408,8 @@
               "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj": {
                 "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj"
               },
-              "C:\\project\\APISistemaVenta\\SistemaVenta.Model\\SistemaVenta.Model.csproj": {
-                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.Model\\SistemaVenta.Model.csproj"
+              "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj": {
+                "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj"
               }
             }
           }

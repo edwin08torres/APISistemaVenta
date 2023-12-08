@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SistemaVenta.Model;
+namespace SistemaVenta.MODEL;
 
 public partial class Cliente
 {
@@ -23,3 +26,4 @@ public partial class Cliente
 
     public virtual ICollection<DetalleVenta> DetalleVenta { get; } = new List<DetalleVenta>();
 }
+

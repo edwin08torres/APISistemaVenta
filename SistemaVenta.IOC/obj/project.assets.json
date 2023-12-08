@@ -3379,8 +3379,8 @@
             "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
               "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
             },
-            "C:\\project\\APISistemaVenta\\SistemaVenta.Utility\\SistemaVenta.Utility.csproj": {
-              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.Utility\\SistemaVenta.Utility.csproj"
+            "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj": {
+              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj"
             }
           }
         }

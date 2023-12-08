@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using SistemaVenta.Model;
+using SistemaVenta.MODEL;
 
 namespace SistemaVenta.DAL.DBContext;
 
@@ -42,9 +42,9 @@ public partial class DbventaContext : DbContext
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("data source=DESKTOP-L59E58V;Database=MiTienda;USER ID=sa; Password=12345; Persist Security Info=true; TrustServerCertificate=true;");
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder ModelBuilder)
     {
-        modelBuilder.Entity<Categoria>(entity =>
+        ModelBuilder.Entity<Categoria>(entity =>
         {
             entity.HasKey(e => e.IdCategoria).HasName("PK__Categori__8A3D240C39C4C01D");
 
@@ -62,7 +62,7 @@ public partial class DbventaContext : DbContext
                 .HasColumnName("nombre");
         });
 
-        modelBuilder.Entity<Cliente>(entity =>
+        ModelBuilder.Entity<Cliente>(entity =>
         {
             entity.HasKey(e => e.Idcliente).HasName("PK__Cliente__9B8553FC55505BF3");
 
@@ -90,7 +90,7 @@ public partial class DbventaContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<DetalleVenta>(entity =>
+        ModelBuilder.Entity<DetalleVenta>(entity =>
         {
             entity.HasKey(e => e.IdDetalleVenta).HasName("PK__DetalleV__BFE2843F9A68B414");
 
@@ -122,7 +122,7 @@ public partial class DbventaContext : DbContext
                 .HasConstraintName("fk_IDCliente");
         });
 
-        modelBuilder.Entity<Menu>(entity =>
+        ModelBuilder.Entity<Menu>(entity =>
         {
             entity.HasKey(e => e.IdMenu).HasName("PK__Menu__C26AF48348748118");
 
@@ -143,7 +143,7 @@ public partial class DbventaContext : DbContext
                 .HasColumnName("url");
         });
 
-        modelBuilder.Entity<MenuRol>(entity =>
+        ModelBuilder.Entity<MenuRol>(entity =>
         {
             entity.HasKey(e => e.IdMenuRol).HasName("PK__MenuRol__9D6D61A4F505D1D7");
 
@@ -162,7 +162,7 @@ public partial class DbventaContext : DbContext
                 .HasConstraintName("FK__MenuRol__idRol__2A4B4B5E");
         });
 
-        modelBuilder.Entity<NumeroDocumento>(entity =>
+        ModelBuilder.Entity<NumeroDocumento>(entity =>
         {
             entity.HasKey(e => e.IdNumeroDocumento).HasName("PK__NumeroDo__471E421A5AE11FCD");
 
@@ -176,7 +176,7 @@ public partial class DbventaContext : DbContext
             entity.Property(e => e.UltimoNumero).HasColumnName("ultimo_Numero");
         });
 
-        modelBuilder.Entity<Producto>(entity =>
+        ModelBuilder.Entity<Producto>(entity =>
         {
             entity.HasKey(e => e.IdProducto).HasName("PK__Producto__07F4A132867BDE11");
 
@@ -210,7 +210,7 @@ public partial class DbventaContext : DbContext
                 .HasConstraintName("FK_Producto_Proveedor");
         });
 
-        modelBuilder.Entity<Proveedore>(entity =>
+        ModelBuilder.Entity<Proveedore>(entity =>
         {
             entity.HasKey(e => e.Idproveedor).HasName("PK__Proveedo__4CD732405364F2CB");
 
@@ -232,7 +232,7 @@ public partial class DbventaContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Rol>(entity =>
+        ModelBuilder.Entity<Rol>(entity =>
         {
             entity.HasKey(e => e.IdRol).HasName("PK__Rol__3C872F76EA430F56");
 
@@ -249,7 +249,7 @@ public partial class DbventaContext : DbContext
                 .HasColumnName("nombre");
         });
 
-        modelBuilder.Entity<Usuario>(entity =>
+        ModelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.IdUsuario).HasName("PK__Usuario__645723A6D7E71FE6");
 
@@ -282,7 +282,7 @@ public partial class DbventaContext : DbContext
                 .HasConstraintName("FK__Usuario__idRol__2D27B809");
         });
 
-        modelBuilder.Entity<Venta>(entity =>
+        ModelBuilder.Entity<Venta>(entity =>
         {
             entity.HasKey(e => e.IdVenta).HasName("PK__Venta__077D5614A96F2CAB");
 
@@ -304,8 +304,8 @@ public partial class DbventaContext : DbContext
                 .HasColumnName("total");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        OnModelCreatingPartial(ModelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    partial void OnModelCreatingPartial(ModelBuilder ModelBuilder);
 }

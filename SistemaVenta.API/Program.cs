@@ -11,24 +11,27 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.InyectarDependencias(builder.Configuration);
 
-builder.Services.AddCors(options => {
+//Evitara conflicto con relacion entre las url de las api vs angular.
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("NuevaPolitica", app => {
         app.AllowAnyOrigin()
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
-
-} );
-
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
+
+app.UseHttpsRedirection();
+
 
 app.UseCors("NuevaPolitica");
 
