@@ -25,7 +25,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _proveedorServicio.listar();
+                rsp.Value = await _proveedorServicio.listar();
 
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _proveedorServicio.Crear(proveedor);
+                rsp.Value = await _proveedorServicio.Crear(proveedor);
 
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _proveedorServicio.Editar(proveedor);
+                rsp.Value = await _proveedorServicio.Editar(proveedor);
 
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _proveedorServicio.Eliminar(id);
+                rsp.Value = await _proveedorServicio.Eliminar(id);
 
             }
             catch (Exception ex)

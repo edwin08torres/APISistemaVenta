@@ -11,7 +11,6 @@ namespace SistemaVenta.API.Controllers
     [ApiController]
     public class VentaController : ControllerBase
     {
-
         private readonly IVentaService _ventaServicio;
 
         public VentaController(IVentaService ventaServicio)
@@ -28,66 +27,57 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _ventaServicio.Registrar(venta);
-
+                rsp.Value = await   _ventaServicio.Registrar(venta);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
-
         }
-
 
         [HttpGet]
         [Route("Historial")]
-        public async Task<IActionResult> Historial(string buscarPor, string? numeroVenta, string? fechaInicio, string? fechaFin)
+        public async Task<IActionResult> Historial(string buscarPor, string? numeroVenta, string? FechaInicio, string? FechaFin)
         {
             var rsp = new Response<List<VentaDTO>>();
             numeroVenta = numeroVenta is null ? "" : numeroVenta;
-            fechaInicio = fechaInicio is null ? "" : fechaInicio;
-            fechaFin = fechaFin is null ? "" : fechaFin;
-
-
+            FechaInicio = FechaInicio is null ? "" : FechaInicio;
+            FechaFin = FechaFin is null ? "" : FechaFin;
             try
             {
                 rsp.status = true;
-                rsp.value = await _ventaServicio.Historial(buscarPor,numeroVenta,fechaInicio,fechaFin);
-
+                rsp.Value = await _ventaServicio.Historial(buscarPor,numeroVenta, FechaInicio, FechaFin);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
 
-
         [HttpGet]
         [Route("Reporte")]
-        public async Task<IActionResult> Reporte(string? fechaInicio, string? fechaFin)
+        public async Task<IActionResult> Reporte(string? FechaInicio, string? FechaFin)
         {
             var rsp = new Response<List<ReporteDTO>>();
 
             try
             {
                 rsp.status = true;
-                rsp.value = await _ventaServicio.Reporte(fechaInicio, fechaFin);
-
+                rsp.Value = await _ventaServicio.Reporte(FechaInicio, FechaFin);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
-
     }
 }

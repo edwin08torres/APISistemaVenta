@@ -25,7 +25,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _clienteServicio.lista();
+                rsp.Value = await _clienteServicio.lista();
 
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _clienteServicio.Crear(cliente);
+                rsp.Value = await _clienteServicio.Crear(cliente);
 
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _clienteServicio.Editar(cliente);
+                rsp.Value = await _clienteServicio.Editar(cliente);
 
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _clienteServicio.Eliminar(id);
+                rsp.Value = await _clienteServicio.Eliminar(id);
 
             }
             catch (Exception ex)

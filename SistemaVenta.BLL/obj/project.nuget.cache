@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LKiq6MBMpT1iWQcGfFulUgjTRjkWLn/jyYrZTxgxYc5Nq7YQ/q4UTcA1JU3yBxq3S/Tn86qAtl83UPwnyihrjw==",
+  "dgSpecHash": "5D26dDCcAXhi/lD2XYVcr1UTMkuSKDiUi09PmhUAiEUuaomgzfJye3TcHP7E9BukAPuwacfmw6OHsSa7sravsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+  "projectFilePath": "C:\\project\\APISistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\at289\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\at289\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

@@ -1062,7 +1062,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "SistemaVenta.DTO": "1.0.0",
-          "SistemaVenta.MODEL": "1.0.0"
+          "SistemaVenta.Model": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SistemaVenta.DAL.dll": {}
@@ -1081,33 +1081,33 @@
           "bin/placeholder/SistemaVenta.DTO.dll": {}
         }
       },
-      "SistemaVenta.MODEL/1.0.0": {
+      "SistemaVenta.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1"
         },
         "compile": {
-          "bin/placeholder/SistemaVenta.MODEL.dll": {}
+          "bin/placeholder/SistemaVenta.Model.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SistemaVenta.MODEL.dll": {}
+          "bin/placeholder/SistemaVenta.Model.dll": {}
         }
       },
-      "SistemaVenta.UTILITY/1.0.0": {
+      "SistemaVenta.Utility/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "SistemaVenta.DTO": "1.0.0",
-          "SistemaVenta.MODEL": "1.0.0"
+          "SistemaVenta.Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/SistemaVenta.UTILITY.dll": {}
+          "bin/placeholder/SistemaVenta.Utility.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SistemaVenta.UTILITY.dll": {}
+          "bin/placeholder/SistemaVenta.Utility.dll": {}
         }
       }
     }
@@ -3294,23 +3294,23 @@
       "path": "../SistemaVenta.DTO/SistemaVenta.DTO.csproj",
       "msbuildProject": "../SistemaVenta.DTO/SistemaVenta.DTO.csproj"
     },
-    "SistemaVenta.MODEL/1.0.0": {
+    "SistemaVenta.Model/1.0.0": {
       "type": "project",
-      "path": "../SistemaVenta.MODEL/SistemaVenta.MODEL.csproj",
-      "msbuildProject": "../SistemaVenta.MODEL/SistemaVenta.MODEL.csproj"
+      "path": "../SistemaVenta.Model/SistemaVenta.Model.csproj",
+      "msbuildProject": "../SistemaVenta.Model/SistemaVenta.Model.csproj"
     },
-    "SistemaVenta.UTILITY/1.0.0": {
+    "SistemaVenta.Utility/1.0.0": {
       "type": "project",
-      "path": "../SistemaVenta.UTILITY/SistemaVenta.UTILITY.csproj",
-      "msbuildProject": "../SistemaVenta.UTILITY/SistemaVenta.UTILITY.csproj"
+      "path": "../SistemaVenta.Utility/SistemaVenta.Utility.csproj",
+      "msbuildProject": "../SistemaVenta.Utility/SistemaVenta.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "SistemaVenta.DAL >= 1.0.0",
       "SistemaVenta.DTO >= 1.0.0",
-      "SistemaVenta.MODEL >= 1.0.0",
-      "SistemaVenta.UTILITY >= 1.0.0"
+      "SistemaVenta.Model >= 1.0.0",
+      "SistemaVenta.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3322,11 +3322,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "projectUniqueName": "C:\\project\\APISistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
       "projectName": "SistemaVenta.BLL",
-      "projectPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
       "packagesPath": "C:\\Users\\at289\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.BLL\\obj\\",
+      "outputPath": "C:\\project\\APISistemaVenta\\SistemaVenta.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -3353,17 +3353,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
-              "projectPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
+            "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
+              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
             },
-            "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj": {
-              "projectPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj"
+            "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj": {
+              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.DTO\\SistemaVenta.DTO.csproj"
             },
-            "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj": {
-              "projectPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj"
+            "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj": {
+              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.MODEL\\SistemaVenta.MODEL.csproj"
             },
-            "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj": {
-              "projectPath": "C:\\Users\\at289\\Desktop\\UNI\\Soft2\\A\\Nueva carpeta\\miTiendaAPI\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj"
+            "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj": {
+              "projectPath": "C:\\project\\APISistemaVenta\\SistemaVenta.UTILITY\\SistemaVenta.UTILITY.csproj"
             }
           }
         }

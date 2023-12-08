@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SistemaVenta.API.Utilidad;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DTO;
+using SistemaVenta.API.Utilidad;
 
 namespace SistemaVenta.API.Controllers
 {
-    //api controlador de categoria
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase
@@ -26,17 +27,15 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _categoriaServicio.Lista();
-
+                rsp.Value = await _categoriaServicio.List();
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
-
     }
 }

@@ -27,18 +27,17 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _menuServicio.Lista(idUsuario);
-
+                rsp.Value = await _menuServicio.Lista(idUsuario);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
 
-
     }
 }
+

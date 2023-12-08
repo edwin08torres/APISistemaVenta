@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DTO;
 using SistemaVenta.API.Utilidad;
@@ -11,8 +10,7 @@ namespace SistemaVenta.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ProductoController : ControllerBase
-    {
-
+    {   
         private readonly IProductoService _productoServicio;
 
         public ProductoController(IProductoService productoServicio)
@@ -29,15 +27,14 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _productoServicio.Lista();
-
+                rsp.Value = await _productoServicio.Lista();
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
 
@@ -51,17 +48,15 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _productoServicio.Crear(producto);
-
+                rsp.Value = await _productoServicio.Crear(producto);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
-            return Ok(rsp);
 
+            return Ok(rsp);
         }
 
 
@@ -74,19 +69,16 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _productoServicio.Editar(producto);
-
+                rsp.Value = await _productoServicio.Editar(producto);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
-
         }
-
 
         [HttpDelete]
         [Route("Eliminar/{id:int}")]
@@ -97,20 +89,16 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _productoServicio.Eliminar(id);
-
+                rsp.Value = await _productoServicio.Eliminar(id);
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
-
         }
-
-
 
     }
 }
