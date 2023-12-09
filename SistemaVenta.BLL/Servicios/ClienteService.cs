@@ -2,7 +2,7 @@
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DTO;
-using SistemaVenta.Model;
+using SistemaVenta.MODEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +59,7 @@ namespace SistemaVenta.BLL.Servicios
             {
 
                 var clientemodelo = _mapper.Map<Cliente>(modelo);
-                var clienteEncontrado = await _clienteRepositorio.Obtener(u =>
+                var clienteEncontrado = await _clienteRepositorio.obtener(u =>
                     u.Idcliente == clientemodelo.Idcliente
                 );
 
@@ -95,12 +95,12 @@ namespace SistemaVenta.BLL.Servicios
             try
             {
 
-                var clienteEncontrado = await _clienteRepositorio.Obtener(p => p.Idcliente == id);
+                var clienteEncontrado = await _clienteRepositorio.obtener(p => p.Idcliente == id);
 
                 if (clienteEncontrado == null)
                     throw new TaskCanceledException("El cliente no existe");
 
-                bool respuesta = await _clienteRepositorio.Eliminar(clienteEncontrado);
+                bool respuesta = await _clienteRepositorio.Delete(clienteEncontrado);
 
 
                 if (!respuesta)

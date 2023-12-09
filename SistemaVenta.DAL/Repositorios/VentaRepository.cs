@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DTO;
-using SistemaVenta.Model;
+using SistemaVenta.MODEL;
 
 namespace SistemaVenta.DAL.Repositorios
 {
-    public class VentaRepository : GenericRepository<Venta> , IVentaRepository
+    public class VentaRepository : GenericRepository<Venta>, IVentaRepository
     {
+        private DbA98154MitiendaContext _dbcontext;
 
-        private readonly DbventaContext _dbcontext;
-
-        public VentaRepository(DbventaContext dbcontext) : base(dbcontext)
+        public VentaRepository(DbA98154MitiendaContext dbcontext):base(dbcontext) 
         {
             _dbcontext = dbcontext;
         }
@@ -25,12 +24,11 @@ namespace SistemaVenta.DAL.Repositorios
         {
             Venta ventaGenerada = new Venta();
 
-            using (var trasaction = _dbcontext.Database.BeginTransaction())
-            {
-                try {
-
-                    foreach (DetalleVenta dv in modelo.DetalleVenta) {
-                        
+            using( var transaction = _dbcontext.Database.BeginTransaction() ) {
+                try
+                {
+                    foreach(DetalleVenta dv in modelo.DetalleVenta)
+                    {
                         Producto producto_encontrado = _dbcontext.Productos.Where(p => p.IdProducto == dv.IdProducto).First();
 
                         producto_encontrado.Stock = producto_encontrado.Stock - dv.Cantidad;
@@ -43,19 +41,19 @@ namespace SistemaVenta.DAL.Repositorios
                             DetalleVentaDTO detalleVentaDTO = new DetalleVentaDTO()
                             {
                                 IdProducto = dv.IdProducto,
-                                DescripcionProducto = dv.IdProductoNavigation?.Nombre, 
+                                DescripcionProducto = dv.IdProductoNavigation?.Nombre,
                                 Cantidad = dv.Cantidad,
-                                PrecioTexto = dv.Precio?.ToString(), 
-                                TotalTexto = dv.Total?.ToString(), 
+                                PrecioTexto = dv.Precio?.ToString(),
+                                TotalTexto = dv.Total?.ToString(),
                                 IdCliente = clienteAsociado.Idcliente,
                                 Cedula = clienteAsociado.Cedula,
                                 NombreCliente = clienteAsociado.NombreCliente
-                            };         
+                            };
                         }
+                    }   
 
-                    }
                     await _dbcontext.SaveChangesAsync();
-                
+
                     NumeroDocumento correlativo = _dbcontext.NumeroDocumentos.First();
 
                     correlativo.UltimoNumero = correlativo.UltimoNumero + 1;
@@ -64,29 +62,29 @@ namespace SistemaVenta.DAL.Repositorios
                     _dbcontext.NumeroDocumentos.Update(correlativo);
                     await _dbcontext.SaveChangesAsync();
 
-                    int CantidadDigitos = 4;
-                    string ceros = string.Concat(Enumerable.Repeat("0", CantidadDigitos));
+                    int cantidadDigitos = 4;
+                    string ceros = string.Concat(Enumerable.Repeat("0", cantidadDigitos));
                     string numeroVenta = ceros + correlativo.UltimoNumero.ToString();
-                    //00001
-                    numeroVenta = numeroVenta.Substring(numeroVenta.Length - CantidadDigitos, CantidadDigitos);
 
-                    modelo.NumeroDocumento = numeroVenta;
+                    numeroVenta = numeroVenta.Substring(numeroVenta.Length - cantidadDigitos, cantidadDigitos);
+
+                    modelo.NumeroDocumento =  numeroVenta;
 
                     await _dbcontext.Venta.AddAsync(modelo);
                     await _dbcontext.SaveChangesAsync();
 
                     ventaGenerada = modelo;
 
-                    trasaction.Commit();
- 
-                } catch {
-                    
-                    trasaction.Rollback();
+                    transaction.Commit();
+
+                }
+                catch
+                {
+                    transaction.Rollback();
                     throw;
                 }
 
                 return ventaGenerada;
-            
             }
         }
     }

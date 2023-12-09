@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SistemaVenta.Model;
+using SistemaVenta.MODEL;
 
 namespace SistemaVenta.DAL.Repositorios.Contrato
 {

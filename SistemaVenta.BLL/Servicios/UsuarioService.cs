@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-
 
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DTO;
-using SistemaVenta.Model;
-
-
+using SistemaVenta.MODEL;
 
 namespace SistemaVenta.BLL.Servicios
 {
@@ -33,15 +29,14 @@ namespace SistemaVenta.BLL.Servicios
             try
             {
                 var queryUsuario = await _usuarioRepositorio.Consultar();
-                var listaUsuarios = queryUsuario.Include(rol => rol.IdRolNavigation).ToList();
+                var listaUsuario = queryUsuario.Include(rol => rol.IdRolNavigation).ToList();
 
-                return _mapper.Map<List<UsuarioDTO>>(listaUsuarios);
+                return _mapper.Map<List<UsuarioDTO>>(listaUsuario);
             }
-            catch {
+            catch
+            {
                 throw;
             }
-
-
         }
 
         public async Task<SesionDTO> ValidarCredenciales(string correo, string clave)
@@ -49,42 +44,39 @@ namespace SistemaVenta.BLL.Servicios
             try
             {
                 var queryUsuario = await _usuarioRepositorio.Consultar(u =>
-                    u.Correo == correo &&
-                    u.Clave == clave
-                );
+                        u.Correo == correo &&
+                        u.Clave == clave);
 
-                if(queryUsuario.FirstOrDefault() == null)
+                if (queryUsuario.FirstOrDefault() == null)
                     throw new TaskCanceledException("El usuario no existe");
 
-                Usuario devolverUsuario = queryUsuario.Include(rol => rol.IdRolNavigation).First();
+                Usuario devolver_usuario = queryUsuario.Include(rol => rol.IdRolNavigation).First();
 
-                return _mapper.Map<SesionDTO>(devolverUsuario);
-
+                return _mapper.Map<SesionDTO>(devolver_usuario);
             }
-            catch {
+            catch
+            {
                 throw;
             }
-
-
         }
 
         public async Task<UsuarioDTO> Crear(UsuarioDTO modelo)
         {
-            try {
+            try
+            {
+                var usuario_creado = await _usuarioRepositorio.Crear(_mapper.Map<Usuario>(modelo));
 
-                var usuarioCreado = await _usuarioRepositorio.Crear(_mapper.Map<Usuario>( modelo));
-
-                if(usuarioCreado.IdUsuario == 0)
+                if (usuario_creado.IdUsuario == 0)
                     throw new TaskCanceledException("No se pudo crear");
 
-                var query = await _usuarioRepositorio.Consultar(u => u.IdUsuario == usuarioCreado.IdUsuario);
+                var query = await _usuarioRepositorio.Consultar(u => u.IdUsuario == usuario_creado.IdUsuario);
 
-                usuarioCreado = query.Include(rol => rol.IdRolNavigation).First();
+                usuario_creado = query.Include(rol => rol.IdRolNavigation).First();
 
-                return _mapper.Map<UsuarioDTO>(usuarioCreado);
-
+                return _mapper.Map<UsuarioDTO>(usuario_creado);
             }
-            catch {
+            catch
+            {
                 throw;
             }
         }
@@ -93,11 +85,11 @@ namespace SistemaVenta.BLL.Servicios
         {
             try
             {
-                var usuarioModelo = _mapper.Map<Usuario>( modelo);
+                var usuarioModelo = _mapper.Map<Usuario>(modelo);
 
-                var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.IdUsuario == usuarioModelo.IdUsuario);
+                var usuarioEncontrado = await _usuarioRepositorio.obtener(u => u.IdUsuario == usuarioModelo.IdUsuario);
 
-                if(usuarioEncontrado == null)
+                if (usuarioEncontrado == null)
                     throw new TaskCanceledException("El usuario no existe");
 
                 usuarioEncontrado.NombreCompleto = usuarioModelo.NombreCompleto;
@@ -108,12 +100,13 @@ namespace SistemaVenta.BLL.Servicios
 
                 bool respuesta = await _usuarioRepositorio.Editar(usuarioEncontrado);
 
-                if(!respuesta)
+                if (!respuesta)
                     throw new TaskCanceledException("No se pudo editar");
 
                 return respuesta;
             }
-            catch {
+            catch
+            {
                 throw;
             }
         }
@@ -122,23 +115,25 @@ namespace SistemaVenta.BLL.Servicios
         {
             try
             {
-                var usuarioEcontrado = await _usuarioRepositorio.Obtener(u => u.IdUsuario == id);
+                var usuario_encontrado = await _usuarioRepositorio.obtener(u => u.IdUsuario == id);
 
-                if(usuarioEcontrado == null)
+                if (usuario_encontrado == null)
                     throw new TaskCanceledException("El usuario no existe");
 
-                bool respuesta = await _usuarioRepositorio.Eliminar(usuarioEcontrado);
+                bool respuesta = await _usuarioRepositorio.Delete(usuario_encontrado);
 
                 if (!respuesta)
                     throw new TaskCanceledException("No se pudo eliminar");
 
                 return respuesta;
             }
-            catch {
+            catch
+            {
                 throw;
             }
         }
 
       
+        
     }
 }

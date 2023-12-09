@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DTO;
 using SistemaVenta.API.Utilidad;
-
 
 namespace SistemaVenta.API.Controllers
 {
@@ -13,14 +11,12 @@ namespace SistemaVenta.API.Controllers
     [ApiController]
     public class DashBoardController : ControllerBase
     {
+        private readonly IDashBoardService _DashBoardservicio;
 
-        private readonly IDashBoardService _dashboardServicio;
-
-        public DashBoardController(IDashBoardService dashboardServicio)
+        public DashBoardController(IDashBoardService dashBoardservicio)
         {
-            _dashboardServicio = dashboardServicio;
+            _DashBoardservicio = dashBoardservicio;
         }
-
 
         [HttpGet]
         [Route("Resumen")]
@@ -31,16 +27,16 @@ namespace SistemaVenta.API.Controllers
             try
             {
                 rsp.status = true;
-                rsp.value = await _dashboardServicio.Resumen();
-
+                rsp.Value = await _DashBoardservicio.Resumen();
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
-
             }
+
             return Ok(rsp);
         }
+
     }
 }

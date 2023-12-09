@@ -8,38 +8,24 @@ using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DAL.DBContext;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using Azure.Core;
 
 namespace SistemaVenta.DAL.Repositorios
 {
-    public  class GenericRepository<TModelo> : IGenericRepository<TModelo> where TModelo : class
+    public class GenericRepository<Tmodelo> : IGenericRepository<Tmodelo> where Tmodelo : class
     {
-        private readonly DbventaContext _dbcontext;
+        private readonly DbA98154MitiendaContext _context;
 
-        public GenericRepository(DbventaContext dbcontext)
+        public GenericRepository(DbA98154MitiendaContext context)
         {
-            _dbcontext = dbcontext;
+            _context = context;
         }
 
-        public async Task<TModelo> Obtener(Expression<Func<TModelo, bool>> filtro)
+
+        public async Task<Tmodelo> obtener(Expression<Func<Tmodelo, bool>> filtro)
         {
             try
             {
-                TModelo modelo = await _dbcontext.Set<TModelo>().FirstOrDefaultAsync(filtro);
-                return modelo;
-            }
-            catch {
-                throw;
-            }
-
-        }
-
-        public async Task<TModelo> Crear(TModelo modelo)
-        {
-            try
-            {
-                _dbcontext.Set<TModelo>().Add(modelo);
-                await _dbcontext.SaveChangesAsync();
+                Tmodelo modelo = await _context.Set<Tmodelo>().FirstOrDefaultAsync(filtro);
                 return modelo;
             }
             catch
@@ -48,12 +34,26 @@ namespace SistemaVenta.DAL.Repositorios
             }
         }
 
-        public async Task<bool> Editar(TModelo modelo)
+        public async Task<Tmodelo> Crear(Tmodelo modelo)
         {
             try
             {
-                _dbcontext.Set<TModelo>().Update(modelo);
-                await _dbcontext.SaveChangesAsync();
+                _context.Set<Tmodelo>().Add(modelo);
+                await _context.SaveChangesAsync();
+                return modelo;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> Editar(Tmodelo modelo)
+        {
+            try
+            {
+                _context.Set<Tmodelo>().Update(modelo);
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch
@@ -62,12 +62,12 @@ namespace SistemaVenta.DAL.Repositorios
             }
         }
 
-        public async Task<bool> Eliminar(TModelo modelo)
+        public async Task<bool> Delete(Tmodelo modelo)
         {
             try
             {
-                _dbcontext.Set<TModelo>().Remove(modelo);
-                await _dbcontext.SaveChangesAsync();
+                _context.Set<Tmodelo>().Remove(modelo);
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch
@@ -76,11 +76,11 @@ namespace SistemaVenta.DAL.Repositorios
             }
         }
 
-        public async Task<IQueryable<TModelo>> Consultar(Expression<Func<TModelo, bool>> filtro = null)
+        public async Task<IQueryable<Tmodelo>> Consultar(Expression<Func<Tmodelo, bool>> filtro = null)
         {
             try
             {
-                IQueryable<TModelo> queryModelo = filtro == null ? _dbcontext.Set<TModelo>() : _dbcontext.Set<TModelo>().Where(filtro);
+                IQueryable<Tmodelo> queryModelo = filtro == null ? _context.Set<Tmodelo>() : _context.Set<Tmodelo>().Where(filtro);
                 return queryModelo;
             }
             catch
@@ -88,6 +88,5 @@ namespace SistemaVenta.DAL.Repositorios
                 throw;
             }
         }
-
     }
 }

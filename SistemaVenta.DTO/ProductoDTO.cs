@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVenta.DTO
 {
-    public class ProductoDTO
+    public   class ProductoDTO
     {
         public int IdProducto { get; set; }
         public string? Nombre { get; set; }

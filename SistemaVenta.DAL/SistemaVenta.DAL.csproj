@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaVenta.DTO\SistemaVenta.DTO.csproj" />
-    <ProjectReference Include="..\SistemaVenta.Model\SistemaVenta.Model.csproj" />
+    <ProjectReference Include="..\SistemaVenta.MODEL\SistemaVenta.MODEL.csproj" />
   </ItemGroup>
 
 </Project>

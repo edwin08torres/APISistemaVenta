@@ -1,0 +1,84 @@
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.deps.json
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.AssemblyReference.cache
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfoInputs.cache
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfo.cs
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CoreCompileInputs.cache
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\refint\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\ref\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.dll
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.pdb
+C:\Users\at289\Desktop\Whatever\miTienda\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CopyComplete
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.deps.json
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.AssemblyReference.cache
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfoInputs.cache
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfo.cs
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CoreCompileInputs.cache
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CopyComplete
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\refint\SistemaVenta.BLL.dll
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\maycr\OneDrive\Documentos\PROY DISEÑO\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\ref\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.deps.json
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.UTILITY.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.AssemblyReference.cache
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfoInputs.cache
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfo.cs
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CoreCompileInputs.cache
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CopyComplete
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\refint\SistemaVenta.BLL.dll
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\Users\at289\Desktop\UNI\Soft2\A\Nueva carpeta\miTiendaAPI\SistemaVenta.BLL\obj\Debug\net7.0\ref\SistemaVenta.BLL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.deps.json
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.Utility.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DAL.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.DTO.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.MODEL.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\bin\Debug\net7.0\SistemaVenta.Utility.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.AssemblyReference.cache
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfoInputs.cache
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.AssemblyInfo.cs
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CoreCompileInputs.cache
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.csproj.CopyComplete
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\refint\SistemaVenta.BLL.dll
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\SistemaVenta.BLL.pdb
+C:\project\APISistemaVenta\SistemaVenta.BLL\obj\Debug\net7.0\ref\SistemaVenta.BLL.dll

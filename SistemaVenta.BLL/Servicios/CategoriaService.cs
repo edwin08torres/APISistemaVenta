@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 using AutoMapper;
 using SistemaVenta.BLL.Servicios.Contrato;
 using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DTO;
-using SistemaVenta.Model;
-
+using SistemaVenta.MODEL;
 
 namespace SistemaVenta.BLL.Servicios
 {
@@ -25,14 +23,16 @@ namespace SistemaVenta.BLL.Servicios
             _mapper = mapper;
         }
 
-        public async Task<List<CategoriaDTO>> Lista()
+        public async Task<List<CategoriaDTO>> List()
         {
-            try {
+            try
+            {
+                var lista_categorias = await _categoriaRepositorio.Consultar();
 
-                var listaCategorias = await _categoriaRepositorio.Consultar();
-                return _mapper.Map<List<CategoriaDTO>>(listaCategorias.ToList());
-            
-            } catch {
+                return _mapper.Map<List<CategoriaDTO>>(lista_categorias).ToList();
+            }
+            catch
+            {
                 throw;
             }
         }

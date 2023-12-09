@@ -8,13 +8,12 @@ using System.Linq.Expressions;
 
 namespace SistemaVenta.DAL.Repositorios.Contrato
 {
-    public interface IGenericRepository<TModel> where TModel : class
+    public interface IGenericRepository<Tmodel> where Tmodel : class
     {
-        Task<TModel> Obtener(Expression<Func<TModel, bool>> filtro);
-        Task<TModel> Crear(TModel modelo);
-        Task<bool> Editar(TModel modelo);
-        Task<bool> Eliminar(TModel modelo);
-        Task<IQueryable<TModel>> Consultar(Expression<Func<TModel, bool>> filtro = null);
-
+        Task<Tmodel> obtener(Expression<Func<Tmodel,bool>> filtro);
+        Task<Tmodel> Crear(Tmodel modelo);
+        Task<bool> Editar(Tmodel modelo);
+        Task<bool> Delete(Tmodel modelo);
+        Task<IQueryable<Tmodel>> Consultar(Expression<Func<Tmodel, bool>> filtro = null);
     }
 }
