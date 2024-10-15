@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SistemaVenta.DAL.Repositorios.Contrato;
+﻿using SistemaVenta.DAL.Repositorios.Contrato;
 using SistemaVenta.DAL.DBContext;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -13,9 +7,9 @@ namespace SistemaVenta.DAL.Repositorios
 {
     public class GenericRepository<Tmodelo> : IGenericRepository<Tmodelo> where Tmodelo : class
     {
-        private readonly DbA98154MitiendaContext _context;
+        private readonly DbventaContext _context;
 
-        public GenericRepository(DbA98154MitiendaContext context)
+        public GenericRepository(DbventaContext context)
         {
             _context = context;
         }

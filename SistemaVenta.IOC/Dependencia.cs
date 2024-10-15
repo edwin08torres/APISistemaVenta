@@ -21,7 +21,7 @@ namespace SistemaVenta.IOC
     {
         public static void InyectarDependencias(this IServiceCollection service, IConfiguration configuration)
         {
-            service.AddDbContext<DbA98154MitiendaContext>(options =>
+            service.AddDbContext<DbventaContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("cadenaSQL"));
             });
